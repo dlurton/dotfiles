@@ -1,5 +1,5 @@
 #!/bin/bash
 
 opam init -n
-
+eval `opam config env`
 opam install merlin utop -y

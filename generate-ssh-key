@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+KEY_PATH=~/.ssh/id_rsa
+
+if [ -f $KEY_PATH ]; then
+	echo "$KEY_PATH exists, aborting..."
+	exit 1
+fi
+
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+
+echo "Copy public key to X clipboard?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) xclip -sel clip < "$KEY_PATH.pub"; break;;
+        No ) exit;;
+    esac
+done
+

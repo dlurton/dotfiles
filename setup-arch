@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+# install useful packages
+pacman -S --needed --noconfirm chromium vim ocaml opam htop xclip
+
+
+# disable anoying pc speaker, if it is enabled
+if grep -q pcspkr /proc/modules; then 
+    rmmod pcspkr
+fi
+

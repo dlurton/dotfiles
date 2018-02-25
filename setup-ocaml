@@ -1,0 +1,5 @@
+#!/bin/bash
+
+opam init -n
+
+opam install merlin utop -y

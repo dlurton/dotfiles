@@ -1,0 +1,38 @@
+#!/bin/bash -e
+echo "Hello, Dave."
+
+ME=$(readlink -f $0)
+echo "ME=$ME"
+
+MY_DIR=$(dirname $ME)
+echo "MY_DIR=$MY_DIR"
+
+NOW=$(date -u)
+echo "NOW=$NOW"
+
+source $MY_DIR/util.sh
+
+echo "Sourced $MY_DIR/util.sh"
+
+# appends $1 to interesting shell files
+function append_to_shell_rc_files() {
+    NOTE="# Added by $ME $NOW"
+    maybe_append ~/.bashrc "$NOTE" "$1"
+    maybe_append ~/.zshrc "$NOTE" "$1" 
+}
+
+append_to_shell_rc_files "source ~/dotfiles/shell-init.sh"
+
+if [ ! -f ~/.vimrc ]; then 
+    touch ~/.vimrc
+fi
+maybe_append ~/.vimrc "\" Added by $ME $NOW " "source $MY_DIR/vimrc"
+
+if [ ! -f ~/.gitignore_global ]; then 
+    cp $MY_DIR/templates/gitignore_global ~/.gitignore_global
+    echo "Copied default ~/.gitignore_global"
+else
+    echo "~/.gitignore_global already exists..."
+fi
+
+echo "Done."

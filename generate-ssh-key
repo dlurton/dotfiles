@@ -9,6 +9,9 @@ fi
 
 ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 
+echo "Here's the public key:"
+cat "$KEY_PATH.pub"
+
 echo "Copy public key to X clipboard?"
 select yn in "Yes" "No"; do
     case $yn in

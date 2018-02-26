@@ -4,6 +4,21 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 " Tab width of 2 for *.ml files
 autocmd BufRead,BufNewFile *.ml set tabstop=2 shiftwidth=2 softtabstop=2
 
+" netrw is vim's built-in file browser
+" https://shapeshed.com/vim-netrw/
+" Execute :Vexplore to see
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 15
+"augroup ProjectDrawer
+"    autocmd!
+    " autocmd VimEnter * :Vexplore
+"    autocmd * :Vexplore
+"augroup END
+
+
 " sensible.vim - Defaults everyone can agree on
 " Maintainer:   Tim Pope <http://tpo.pe/>
 " Version:      1.1
@@ -131,6 +146,7 @@ endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
 
 let g:syntastic_ocaml_checkers = ['merlin']
+let g:syntastic_auto_loc_list = 1
 
 " for airline plugin, below
 let g:airline_powerline_fonts = 1

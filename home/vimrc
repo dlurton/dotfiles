@@ -1,3 +1,9 @@
+" Default tab settings for all files
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+" Tab width of 2 for *.ml files
+autocmd BufRead,BufNewFile *.ml set tabstop=2 shiftwidth=2 softtabstop=2
+
 " sensible.vim - Defaults everyone can agree on
 " Maintainer:   Tim Pope <http://tpo.pe/>
 " Version:      1.1

@@ -42,7 +42,9 @@ append_to_shell_rc_files "source ~/dotfiles/shell-init.sh"
 if [ ! -f ~/.vimrc ]; then 
     touch ~/.vimrc
 fi
-maybe_append ~/.vimrc "\" Added by $ME $NOW " "source $MY_DIR/vimrc"
+
+# managing vim completely via symlink for now
+# maybe_append ~/.vimrc "\" Added by $ME $NOW " "source $MY_DIR/vimrc"
 
 if [ ! -f ~/.gitignore_global ]; then 
     cp $MY_DIR/templates/gitignore_global ~/.gitignore_global

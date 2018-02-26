@@ -1,9 +1,4 @@
-#!/bin/bash
-<<<<<<< HEAD
-
-=======
-echo $SHELL
->>>>>>> Initial setup-symlinks script
+#!/bin/sh -e
 ME=$(readlink -f $0)
 MY_DIR=$(dirname $ME)
 source $MY_DIR/util.sh
@@ -13,22 +8,6 @@ echo "Searching for files in $MY_DIR/home"
 cd $MY_DIR/home
 
 for file in *; do 
-<<<<<<< HEAD
-    symlink_path=$(readlink -f ~/.$file)
-    target=$(readlink -f $file)
-
-    echo "Symlink $symlink_path should point to $target"
-    
-    if [ -L $symlink_path ]; then 
-        echo "$symlink_path is already a symlink"
-    else 
-        if [ -f $symlink_path ]; then 
-            new_name="$symlink_path.old-dotfile"
-            echo "$symlink_path is a regular file, renaming to $new_name"
-            mv "$symlink_path" "$new_name"
-        fi
-        ln -s "$target" "$symlink_path"
-=======
     echo "* Working on $file"
     
     symlink="$HOME/.$file"
@@ -46,7 +25,6 @@ for file in *; do
         fi
         echo "linking $symlink to $target" 
         ln -s "$target" "$symlink"
->>>>>>> Initial setup-symlinks script
     fi
 
 done

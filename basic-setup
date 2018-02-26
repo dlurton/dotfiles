@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/sh -e
 echo "Hello, Dave."
 
 ME=$(readlink -f $0)
@@ -13,6 +13,22 @@ echo "NOW=$NOW"
 source $MY_DIR/util.sh
 
 echo "Sourced $MY_DIR/util.sh"
+
+if [ $SHELL -neq "/usr/bin/zsh" ]; then
+    echo "Setting default shell to zsh "
+    chsh -s /usr/bin/zsh
+else 
+    echo "Shell was already /usr/bin/zsh"    
+fi
+
+# https://unix.stackexchange.com/questions/212183/how-do-i-check-if-a-variable-exists-in-an-if-statement
+
+if [ -d $HOME/.oh-my-zsh ]; then 
+    echo "It appears oh-my-zsh is already installed."
+else
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
 
 # appends $1 to interesting shell files
 function append_to_shell_rc_files() {

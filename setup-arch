@@ -1,8 +1,7 @@
 #!/bin/bash -e
 
 # install useful packages
-pacman -S --needed --noconfirm chromium vim ocaml opam htop xclip 
-
+pacman -S --needed --noconfirm chromium vim zsh ocaml opam htop xclip powerline-fonts
 
 # disable anoying pc speaker, if it is enabled
 if grep -q pcspkr /proc/modules; then 

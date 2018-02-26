@@ -123,3 +123,16 @@ for tool in s:opam_packages
   endif
 endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
+
+let g:syntastic_ocaml_checkers = ['merlin']
+
+" to install plugins, add them between plug#begin and plug#end below and run
+" `PlugInstall` the next time you open vim.
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-syntastic/syntastic'
+
+" Initialize plugin system
+call plug#end()
+
+

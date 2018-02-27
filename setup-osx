@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+cd `dirname $0`
+source util.sh
+
+if [ $(command_exists brew ) -eq 1 ]; then
+    echo "brew already installed"
+else
+    echo "installing brew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+brew install htop tmux ocaml ocamlbuild opam 

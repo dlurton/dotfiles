@@ -1,17 +1,16 @@
 #!/bin/sh -e
-ME=$(readlink -f $0)
-MY_DIR=$(dirname $ME)
+MY_DIR=$(dirname $0)
 source $MY_DIR/util.sh
 
 echo "Searching for files in $MY_DIR/home"
 
 cd $MY_DIR/home
 
-for file in *; do 
-    echo "* Working on $file"
+for f in *; do 
+    target=$MY_DIR/home/$f
+    echo "* Working on $target"
     
-    symlink="$HOME/.$file"
-    target=$(readlink -f $file)
+    symlink="$HOME/.$f"
 
     echo "Symlink $symlink should point to $target"
     
@@ -26,7 +25,6 @@ for file in *; do
         echo "linking $symlink to $target" 
         ln -s "$target" "$symlink"
     fi
-
 done
 
 echo "Done."

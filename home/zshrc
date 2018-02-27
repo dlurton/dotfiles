@@ -1,10 +1,12 @@
-POWERLEVEL9K_MODE='awesome-fontconfig'
+if [ `uname` != 'Darwin' ]; then
+    POWERLEVEL9K_MODE='awesome-fontconfig'
+fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/dave/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -92,4 +94,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Added by /home/dave/dotfiles/basic-setup Mon Feb 26 02:17:57 UTC 2018
 source ~/dotfiles/shell-init.sh
+
+if [ -f $HOME/.zshrc.local ]; then 
+    source $HOME/.zshrc.local
+fi
 

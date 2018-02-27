@@ -1,20 +1,26 @@
 #!/bin/sh -e
 echo "Hello, Dave."
+#########################
+# variables
 
-ME=$(readlink -f $0)
-echo "ME=$ME"
-
-MY_DIR=$(dirname $ME)
+MY_DIR=$(dirname $0)
 echo "MY_DIR=$MY_DIR"
+
+SCRIPT_FILE=$(basename $0)
+ME="$MY_DIR/$SCRIPT_FILE"
+echo "ME=$ME"
 
 NOW=$(date -u)
 echo "NOW=$NOW"
 
 source $MY_DIR/util.sh
-
 echo "Sourced $MY_DIR/util.sh"
 
-if [ $SHELL != "/usr/bin/zsh" ]; then
+
+
+########################
+# shell setup
+if [ $SHELL != "/usr/bin/zsh" ] && [ $SHELL != "/bin/zsh" ]; then
     echo "Setting default shell to zsh "
     chsh -s /usr/bin/zsh
 else 
@@ -37,6 +43,8 @@ else
     echo "Powerlevel9k was already installed."
 fi
 
+########################
+# append shell-init.sh
 
 # appends $1 to interesting shell files
 function append_to_shell_rc_files() {
@@ -54,6 +62,8 @@ fi
 # managing vim completely via symlink for now
 # maybe_append ~/.vimrc "\" Added by $ME $NOW " "source $MY_DIR/vimrc"
 
+########################
+# global gitignore
 if [ ! -f ~/.gitignore_global ]; then 
     cp $MY_DIR/templates/gitignore_global ~/.gitignore_global
     echo "Copied default ~/.gitignore_global"

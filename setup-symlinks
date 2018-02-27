@@ -1,31 +1,56 @@
-#!/bin/sh -e
+#!/bin/bash -e
 MY_DIR=$(dirname $0)
+
 source $MY_DIR/util.sh
 
+dryrun=1
+if [ $# -ne 0 ]; then
+    echo checking first
+    if [ $1 -ne "--for-real" ]; then 
+        echo "The only flag supported by this script is --for-real"
+    else 
+        dryrun=0
+    fi
+fi
+
+made_changes=0
+
 echo "Searching for files in $MY_DIR/home"
+
+
 
 cd $MY_DIR/home
 
 for f in *; do 
     target=$MY_DIR/home/$f
-    echo "* Working on $target"
-    
     symlink="$HOME/.$f"
 
-    echo "Symlink $symlink should point to $target"
+    echo "$symlink should point to $target"
     
-    if [ -L $symlink ]; then 
-        echo "$symlink is already a symlink"
-    else 
+    if [ ! -L $symlink ]; then 
         if [ -f $symlink ]; then 
             new_name="$symlink.old-dotfile"
-            echo "$symlink is a regular file, renaming to $new_name"
-            mv "$symlink" "$new_name"
+            echo "Backup made: $new_name"
+            if [ $dryrun -ne 0 ]; then
+                mv "$symlink" "$new_name"
+                made_changes=1
+            fi
         fi
         echo "linking $symlink to $target" 
-        ln -s "$target" "$symlink"
+        if [ $dryrun -ne 0 ]; then 
+            ln -s "$target" "$symlink"
+            made_changes=1
+        fi
     fi
 done
 
-echo "Done."
+if [ $made_changes -eq 0 ]; then
+    echo "No changes were made."
+else 
+    echo "Changes WERE made."
+fi
+
+if [ $dryrun -ne 0 ]; then
+    echo "That was a dry run include --for-real switch to actually perform the changes."
+fi
 

@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+if [ -d $HOME/.fonts/adobe-fonts/source-code-pro ]; then 
+    echo "Source Code Pro font is already installed."
+else 
+    # from: https://github.com/ocaml/merlin/wiki/spacemacs-from-scratch
+    git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git ~/.fonts/adobe-fonts/source-code-pro
+    fc-cache -f -v
+fi
+
+if [ -d $HOME/.emacs.d ]; then 
+    echo "$HOME/.emacs.d already exists, doing nothing."
+else 
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+fi
+
+

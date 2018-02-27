@@ -11,3 +11,8 @@ else
 fi
 
 brew install htop tmux ocaml ocamlbuild opam 
+
+# The recommended way of setting up emacs according to https://github.com/syl20bnr/spacemacs
+brew tap d12frosted/emacs-plus
+brew install emacs-plus --HEAD --with-natural-title-bars
+brew linkapps emacs-plus

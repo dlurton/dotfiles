@@ -2,4 +2,4 @@
 
 opam init -n
 eval `opam config env`
-opam install merlin utop -y
+opam install merlin utop ocp-indent tuareg -y

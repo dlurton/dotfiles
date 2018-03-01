@@ -10,9 +10,14 @@ else
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew install htop tmux ocaml ocamlbuild opam 
+brew install htop tmux ocaml ocamlbuild
+
+# Source Code Pro font recommended for spacemacs on OSX.
+brew tap caskroom/fonts && brew cask install font-source-code-pro
 
 # The recommended way of setting up emacs according to https://github.com/syl20bnr/spacemacs
 brew tap d12frosted/emacs-plus
 brew install emacs-plus --HEAD --with-natural-title-bars
 brew linkapps emacs-plus
+
+echo "Install karabiner to swap esc and control keys:  https://pqrs.org/osx/karabiner"

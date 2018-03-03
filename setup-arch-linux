@@ -3,8 +3,22 @@
 # install useful packages
 pacman -S --needed --noconfirm chromium vim emacs zsh ocaml opam htop xclip powerline-fonts awesome-terminal-fonts
 
-# disable anoying pc speaker, if it is enabled
+# if pc speaker module is loaded, unload it.
 if grep -q pcspkr /proc/modules; then 
+    echo "Unloading pcspkr module"
     rmmod pcspkr
+else
+    echo "pcskpr module not loaded"
 fi
+
+# blacklist the pc speaker module if it isn't already.
+nobeep_conf="/etc/modprobe.d/nobeep.conf"
+if [ ! -f $nobeep_conf ]; then
+    echo "Blacklisting pcskpr module by adding $nobeep_conf"
+    echo "# this file created by ~/dotfiles/setup-arch-linux" > $nobeep_conf
+    echo "blacklist pcspkr" >> $nobeep_conf
+else
+    echo "$nobeep_conf already exists"
+fi
+
 

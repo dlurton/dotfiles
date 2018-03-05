@@ -53,7 +53,7 @@ function append_to_shell_rc_files() {
     maybe_append ~/.zshrc "$NOTE" "$1" 
 }
 
-append_to_shell_rc_files "source ~/dotfiles/shell-init.sh"
+# append_to_shell_rc_files "source ~/dotfiles/shell-init.sh"
 
 if [ ! -f ~/.vimrc ]; then 
     touch ~/.vimrc
@@ -64,11 +64,14 @@ fi
 
 ########################
 # global gitignore
-if [ ! -f ~/.gitignore_global ]; then 
-    cp $MY_DIR/templates/gitignore_global ~/.gitignore_global
-    echo "Copied default ~/.gitignore_global"
-else
-    echo "~/.gitignore_global already exists..."
-fi
+#if [ ! -f ~/.gitignore_global ]; then 
+#    cp $MY_DIR/templates/gitignore_global ~/.gitignore_global
+#    echo "Copied default ~/.gitignore_global"
+#else
+#    echo "~/.gitignore_global already exists..."
+#fi
+
+echo "Configuring git to use ~/.gitignore_global"
+git config --global core.excludesfile ~/.gitignore_global
 
 echo "Done."

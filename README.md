@@ -27,4 +27,8 @@ Open `vim` and execute `:PlugInstall` to install the plugins.
 
 Open emacs and let it download all the plugins.
 
+Execute `~/dotfiles/generate-ssh-key` and let copy the generate public key to clipboard.  Add it to your github account.
+
+Execute `~/dotfiles/set-dotfiles-remote-to-ssh`
+
 

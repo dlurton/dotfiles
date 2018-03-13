@@ -94,9 +94,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Added by /home/dave/dotfiles/basic-setup Mon Feb 26 02:17:57 UTC 2018
-source ~/dotfiles/shell-init.sh
-
+. /home/dave/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+export OCAMLRUNPARAM="b"
+# use ~/.zshrc.local for configuration that should only be used with the local machine
 if [ -f $HOME/.zshrc.local ]; then 
     source $HOME/.zshrc.local
 fi

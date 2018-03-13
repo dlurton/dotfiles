@@ -1,0 +1,6 @@
+#!/bin/bash -e 
+
+cd ~/.emacs.d
+git pull
+
+echo "Spacemacs updated"

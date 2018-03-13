@@ -2,7 +2,10 @@
 
 curl https://sh.rustup.rs -sSf | sh
 
-#cargo returns non-zero if has nothing to do, so:
-unset -e
+rustup component add rust-src
+
+set +e
 cargo install racer rustfmt
+
+
 

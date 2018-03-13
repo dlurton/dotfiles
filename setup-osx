@@ -1,23 +1,28 @@
-#!/bin/bash -e
+#!/bin/zsh -e
 
 cd `dirname $0`
-source util.sh
+. utils.sh
 
 if [ $(command_exists brew ) -eq 1 ]; then
-    echo "brew already installed"
+    echo-green "brew already installed"
 else
-    echo "installing brew"
+    announce "installing brew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew install htop tmux ocaml ocamlbuild
+announce "installing packages"
+brew install htop tmux ocaml ocamlbuild coreutils
 
+announce "installing source code pro font"
 # Source Code Pro font recommended for spacemacs on OSX.
 brew tap caskroom/fonts && brew cask install font-source-code-pro
 
+announce "installing emacs"
 # The recommended way of setting up emacs according to https://github.com/syl20bnr/spacemacs
 brew tap d12frosted/emacs-plus
 brew install emacs-plus --HEAD --with-natural-title-bars
 brew linkapps emacs-plus
 
-echo "Install karabiner to swap esc and control keys:  https://pqrs.org/osx/karabiner"
+echo-green "Install karabiner to swap esc and control keys:  https://pqrs.org/osx/karabiner"
+
+echo-yellow "Script complete."

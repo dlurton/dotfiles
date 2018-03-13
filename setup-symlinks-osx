@@ -1,7 +1,9 @@
 #!/bin/bash -e
 MY_DIR=$(dirname $0)
 
-source $MY_DIR/util.sh
+source $MY_DIR/utils.sh
+
+cd $HOME
 
 dryrun=1
 if [ $# -ne 0 ]; then

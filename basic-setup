@@ -13,8 +13,8 @@ echo "ME=$ME"
 NOW=$(date -u)
 echo "NOW=$NOW"
 
-source $MY_DIR/util.sh
-echo "Sourced $MY_DIR/util.sh"
+source $MY_DIR/utils.sh
+echo "Sourced $MY_DIR/utils.sh"
 
 
 

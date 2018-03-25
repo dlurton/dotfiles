@@ -18,26 +18,26 @@ WHITE='\033[01;37m'
 
 COLOR_OFF='\033[0m'
 
-function echo-color() {
+function echo_color() {
     echo -e "$1$2$COLOR_OFF"
 }
 
-function echo-green() {
-    echo-color $GREEN $1
+function echo_green() {
+    echo_color $GREEN $1
 }
 
-function echo-yellow() {
-    echo-color $YELLOW $1
+function echo_yellow() {
+    echo_color $YELLOW $1
 }
 
-function echo-red() {
-    echo-color $RED $1
+function echo_red() {
+    echo_color $RED $1
 }
 
 function announce() {
-    echo-green "******************************************"
-    echo-yellow "    $1"
-    echo-green "******************************************"
+    echo_green "******************************************"
+    echo_yellow "    $1"
+    echo_green "******************************************"
 }
 
 # $1: the command to test for existence

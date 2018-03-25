@@ -1,0 +1,7 @@
+#!/bin/bash -e 
+
+# install useful packages
+apt install chromium-browser vim emacs zsh ocaml opam htop xclip fonts-powerline rlwrap
+
+
+

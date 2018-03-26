@@ -5,7 +5,7 @@ curl https://sh.rustup.rs -sSf | sh
 rustup component add rust-src
 
 set +e
-cargo install racer rustfmt
+cargo install racer
 
 
 

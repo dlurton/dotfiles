@@ -1,0 +1,16 @@
+#/bin/bash -e
+
+MY_DIR=`dirname $0`
+echo $MY_DIR
+. $MY_DIR/utils.sh
+
+if [ ! -f $1 ]; then 
+    echo -e "#!/bin/bash -e\n\n" > $1
+fi
+
+vim $1
+
+if [ -f $1 ]; then
+    chmod u+x $1
+    echo_green "$1 marked as executable for you"
+fi

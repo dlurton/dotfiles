@@ -1,3 +1,5 @@
+alias lls='ls -lh'
+
 if [ `uname` != 'Darwin' ]; then
     POWERLEVEL9K_MODE='awesome-fontconfig'
 fi
@@ -6,12 +8,7 @@ fi
 export PATH=$HOME/bin:$HOME/dotfiles:/usr/local/bin:$HOME/.cargo/bin:$PATH
 
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" &> /dev/null
-
-
-
-
-
-
+export RUST_BACKTRACE=full
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh

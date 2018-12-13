@@ -15,5 +15,5 @@ else
 fi
 
 cd ~/.emacs.d
-git checkout develop
+# git checkout develop
 

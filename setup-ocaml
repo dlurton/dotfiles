@@ -4,4 +4,4 @@ opam switch 4.07.1
 opam init -n
 eval `opam config env`
 
-opam install merlin utop ocp-indent tuareg -y
+opam install merlin utop ocp-indent tuareg menhir -y

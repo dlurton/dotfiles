@@ -14,3 +14,14 @@ cmake-build-release/
 
 # Emacs/spacemacs, whatever
 .#*
+
+# Always ignore scratch pads
+ScratchPad.java
+ScratchPad.kt
+scratch_pad.m
+
+# Also really don't care about TODO files.
+
+TODO.md
+TODO.txt
+

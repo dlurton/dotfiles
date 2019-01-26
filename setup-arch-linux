@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # install useful packages
-pacman -S --needed --noconfirm chromium vim emacs zsh gcc ocaml opam htop xclip powerline-fonts awesome-terminal-fonts rlwrap tree
+pacman -S --needed --noconfirm chromium vim emacs zsh gcc ocaml opam htop xclip bdf-unifont powerline-fonts awesome-terminal-fonts rlwrap tree
 
 # if pc speaker module is loaded, unload it.
 if grep -q pcspkr /proc/modules; then 

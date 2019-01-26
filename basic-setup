@@ -74,4 +74,7 @@ fi
 echo "Configuring git to use ~/.gitignore_global"
 git config --global core.excludesfile ~/.gitignore_global
 
+
+echo "Setting global git editor to vim"
+git config --global core.editor "vim"
 echo "Done."

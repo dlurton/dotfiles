@@ -8,6 +8,7 @@ cd ~
 git clone https://github.com/dlurton/dotfiles.git
 cd dotfiles
 ./setup-<OS / distro>
+./setup-symblinks-<os> --for-real
 ./basic-setup
 ```
 Log out and log back in.  Opening a terminal should start `zsh` with the custom theme.  Then:

@@ -1,5 +1,5 @@
 #!/bin/bash -e
 
 git config --local user.name "David Lurton"
-git config --local user.email "psydave@gmail.com"
+git config --local user.email "dlurton@users.noreply.github.com"
 

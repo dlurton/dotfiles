@@ -2,10 +2,13 @@
 
 curl https://sh.rustup.rs -sSf | sh
 
-rustup component add rust-src
+#rustup component add rust-src
 
 set +e
-cargo install racer
+
+# this is needed for racer to bulid properly. I don't really know why they decided to do that--it seems dumb to require users to install the nightly build of the rust toolchain.
+rustup toolchain add nightly
+cargo +nightly install racer
 
 
 

@@ -1,0 +1,8 @@
+#!/bin/bash -e 
+
+echo "Remember that you need to setup OCaml first!"
+
+opam install coq
+opam install coqide
+
+

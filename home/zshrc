@@ -1,5 +1,21 @@
 alias lls='ls -lh'
 
+alias g='git'
+alias ga='git add'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gst='git stash'
+alias gstp= 'git stash pop'
+alias gs='git status'
+alias gco='git checkout'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gcane='git commit --amend --no-edit'
+alias gr='git rebase'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
+alias gpr='git pull --rebase'
+
 if [ `uname` != 'Darwin' ]; then
     POWERLEVEL9K_MODE='awesome-fontconfig'
 fi

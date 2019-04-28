@@ -16,6 +16,7 @@ alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias gpr='git pull --rebase'
 
+
 if [ `uname` != 'Darwin' ]; then
     POWERLEVEL9K_MODE='awesome-fontconfig'
 fi
@@ -123,3 +124,6 @@ if [ -f $HOME/.zshrc.local ]; then
 fi
 
 . ~/dotfiles/utils.sh
+
+# not sure where the gp alias is coming from --not this file.  unalias it for now until I can figure it out
+unalias gp

@@ -78,3 +78,9 @@ git config --global core.excludesfile ~/.gitignore_global
 echo "Setting global git editor to vim"
 git config --global core.editor "vim"
 echo "Done."
+
+echo "Setting global git to block commits if an email address isn't configured."
+git config --global --add user.useConfigOnly true
+
+echo "Setting global name for commits"
+git config --global user.name "David Lurton"

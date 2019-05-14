@@ -1,22 +1,3 @@
-alias lls='ls -lh'
-
-alias g='git'
-alias ga='git add'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gst='git stash'
-alias gstp= 'git stash pop'
-alias gs='git status'
-alias gco='git checkout'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gcane='git commit --amend --no-edit'
-alias gr='git rebase'
-alias grc='git rebase --continue'
-alias gra='git rebase --abort'
-alias gpr='git pull --rebase'
-
-
 if [ `uname` != 'Darwin' ]; then
     POWERLEVEL9K_MODE='awesome-fontconfig'
 fi
@@ -125,5 +106,24 @@ fi
 
 . ~/dotfiles/utils.sh
 
-# not sure where the gp alias is coming from --not this file.  unalias it for now until I can figure it out
-unalias gp
+alias lls='ls -lh'
+
+alias g='git'
+alias ga='git add'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gst='git stash'
+alias gstp='git stash pop'
+alias gs='git status'
+alias gco='git checkout'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gcane='git commit --amend --no-edit'
+alias gr='git rebase'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
+alias gpr='git pull --rebase'
+alias gl='git log'
+alias glp='git log --graph --pretty=oneline --abbrev-commit'
+unalias gp 2>/dev/null
+

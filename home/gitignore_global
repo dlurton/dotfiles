@@ -19,9 +19,19 @@ cmake-build-release/
 ScratchPad.java
 ScratchPad.kt
 scratch_pad.m
+scratch_pad.test.fusion
+scratch_pad_test.fusion
+temp.fusion
 
 # Also really don't care about TODO files.
 
 TODO.md
 TODO.txt
+
+# gradle
+.gradle
+
+# brazil build directory
+build
+
 

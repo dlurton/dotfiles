@@ -4,6 +4,21 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 " Tab width of 2 for *.ml files
 autocmd BufRead,BufNewFile *.ml set tabstop=2 shiftwidth=2 softtabstop=2
 
+" Make Alt+arrow keys switch windows 
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+" enable line numbers
+set number
+
+" set line number color (the default with the current theme is horrible)
+highlight LineNr ctermfg=gray
+
+" enable mouse
+set mouse=a
+
 " netrw is vim's built-in file browser
 " https://shapeshed.com/vim-netrw/
 " Execute :Vexplore to see
@@ -157,8 +172,31 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+
+" Source ~/vimrc.local.plugins if it exists
+if filereadable(expand("~/.vimrc.local.plugins"))
+    source ~/.vimrc.local.plugins
+endif
 
 " Initialize plugin system
 call plug#end()
+
+" Settings for NERDTree
+
+" Key binding:
+map <C-n> :NERDTreeToggle<CR>
+
+" Cause VIM to exit when q is used if the only buffer open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Open NERDTree by default
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if (!exists("s:std_in")) | NERDTree | wincmd l | endif
+
+" Source ~/.vimrc.local if it exists
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
 
 

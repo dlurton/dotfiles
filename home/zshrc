@@ -125,5 +125,7 @@ alias gra='git rebase --abort'
 alias gpr='git pull --rebase'
 alias gl='git log'
 alias glp='git log --graph --pretty=oneline --abbrev-commit'
+
+
 unalias gp 2>/dev/null
 

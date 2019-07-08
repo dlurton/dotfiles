@@ -35,3 +35,5 @@ TODO.txt
 build
 
 
+# temporary:
+ftst/rewriter/rvalue_resolve.test.fusion

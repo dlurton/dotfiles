@@ -10,14 +10,28 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
-" enable line numbers
+" Map Ctrl-J to insert a line under the cursor
+nnoremap <C-j> i<CR><Esc>l
+
+"stay in visual mode mode after indent
+vnoremap > >gv
+vnoremap < <gv
+
+"enable  line numbers
 set number
 
 " set line number color (the default with the current theme is horrible)
 highlight LineNr ctermfg=gray
+highlight LineNr guifg=gray
 
 " enable mouse
 set mouse=a
+
+" disable folding (I hate folding)
+set nofoldenable
+
+" set gvim's foreground and background colors
+highlight Normal guifg=white guibg=black
 
 " netrw is vim's built-in file browser
 " https://shapeshed.com/vim-netrw/
@@ -173,6 +187,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
+Plug 'Yggdroot/indentLine'
 
 " Source ~/vimrc.local.plugins if it exists
 if filereadable(expand("~/.vimrc.local.plugins"))
@@ -193,6 +208,22 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Open NERDTree by default
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if (!exists("s:std_in")) | NERDTree | wincmd l | endif
+
+" Set line colors for Yggdroot/indentLine'
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#444444'
+
+" none X terminal
+let g:indentLine_color_tty_light = 4 " (default: 4)
+let g:indentLine_color_dark = 2 " (default: 2)
+
+" Background (Vim, GVim)
+let g:indentLine_bgcolor_term = 0
+let g:indentLine_bgcolor_gui = '#000000'
+
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_enabled = 1
+
 
 " Source ~/.vimrc.local if it exists
 if filereadable(expand("~/.vimrc.local"))

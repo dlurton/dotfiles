@@ -5,7 +5,7 @@ sudo pacman-mirrors --country United_States
 sudo pacman -Syyu
 
 # install useful packages
-pacman -S --needed --noconfirm chromium vim emacs zsh gcc ocaml opam htop xclip bdf-unifont powerline-fonts awesome-terminal-fonts rlwrap tree
+pacman -S --needed --noconfirm chromium vim emacs zsh gcc ocaml opam htop xclip bdf-unifont powerline-fonts awesome-terminal-fonts rlwrap tree jdk11-openjdk
 
 # if pc speaker module is loaded, unload it.
 if grep -q pcspkr /proc/modules; then 

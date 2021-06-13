@@ -1,7 +1,7 @@
 #!/bin/bash -e 
 
 # install useful packages
-apt install chromium-browser vim emacs zsh ocaml opam racket htop xclip fonts-powerline rlwrap curl tree m4 guake
+apt install chromium-browser vim emacs zsh ocaml opam racket htop xclip fonts-font-awesome fonts-powerline rlwrap curl tree m4 guake openjdk-8-jdk openjdk-11-jdk
 
 
 

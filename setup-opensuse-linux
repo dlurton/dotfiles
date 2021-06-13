@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
 # install useful packages
-zypper -n install chromium emacs zsh gcc ocaml opam htop gnu-unifont-bitmap-fonts powerline-fonts fontawesome-fonts rlwrap 
+zypper -n install chromium emacs zsh gcc ocaml opam htop gnu-unifont-bitmap-fonts powerline-fonts fontawesome-fonts rlwrap guake
 
 

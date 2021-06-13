@@ -8,6 +8,8 @@ cd ~
 git clone https://github.com/dlurton/dotfiles.git
 cd dotfiles
 ./setup-<OS / distro>
+# NOTE:  next time I do this I should consider executing ./basic-setup first
+# to see if it has any impact on oh-my-zsh replacing the  ~/.zshrc with it's own version on first load
 ./setup-symlinks-<os> --for-real
 ./basic-setup
 ```

@@ -129,3 +129,5 @@ alias glp='git log --graph --pretty=oneline --abbrev-commit'
 
 unalias gp 2>/dev/null
 
+eval "$(direnv hook zsh)"
+

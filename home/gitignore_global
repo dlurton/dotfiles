@@ -2,6 +2,7 @@
 .idea
 *.iml
 .DS_Store
+.vscode
 
 # CMake
 cmake-build-debug/
@@ -16,12 +17,11 @@ cmake-build-release/
 .#*
 
 # Always ignore scratch pads
-ScratchPad.java
-ScratchPad.kt
+ScratchPad.*
 scratch_pad.m
 scratch_pad.test.fusion
 scratch_pad_test.fusion
-temp.fusion
+scratch_pad.rs
 
 # Also really don't care about TODO files.
 

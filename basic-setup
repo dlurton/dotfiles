@@ -20,12 +20,12 @@ echo "Sourced $MY_DIR/utils.sh"
 
 ########################
 # shell setup
-if [ $SHELL != "/usr/bin/zsh" ] && [ $SHELL != "/bin/zsh" ]; then
-    echo "Setting default shell to zsh "
-    chsh -s /usr/bin/zsh
-else 
-    echo "Shell was already /usr/bin/zsh"    
-fi
+#if [ $SHELL != "/usr/bin/zsh" ] && [ $SHELL != "/bin/zsh" ]; then
+#    echo "Setting default shell to zsh "
+#    chsh -s /usr/bin/zsh
+#else 
+#    echo "Shell was already /usr/bin/zsh"    
+#fi
 
 # https://unix.stackexchange.com/questions/212183/how-do-i-check-if-a-variable-exists-in-an-if-statement
 
